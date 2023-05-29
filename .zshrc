@@ -29,6 +29,35 @@ bindkey '^[[H' beginning-of-line                  # home
 bindkey '^[[F' end-of-line                        # end
 bindkey '^[[Z' undo                               # shift + tab undo last action
 
+
+# Display Images in Terminal
+function imgcat()
+{
+  local CNT=0
+  local IFS=$'\n'
+  local posY=$(($(echo -e "cols" | tput -S) / 2))
+  local posX=$(($(echo -e "lines" | tput -S) / 4))
+
+  for i in $(find $1 -type f -exec file --mime-type {} \+ | awk -F: '{if ($2 ~/image\//) print $1}'); do
+    CNT=$((CNT+1))
+    if test $(($CNT % 2)) -eq 0 && test "$2" != "-1"; then
+      printf "\033[${posX}A"
+      printf "\033[${posY}C"
+      echo -e "==== $(basename $i) ===="
+      printf "\033[${posY}C"
+    else
+      echo -e "==== $(basename $i) ===="
+    fi
+
+    if echo "$i" | grep -e ".svg$" &> /dev/null; then
+      ffmpeg -i "$i" -vf scale=640:-1 -f image2pipe -vcodec png - 2> /dev/null | wezterm imgcat --height 20%
+    else
+      wezterm imgcat --height 20% "$i";
+    fi
+  done
+}
+
+
 # enable completion features
 autoload -Uz compinit
 compinit -d ~/.cache/zcompdump
@@ -64,6 +93,7 @@ alias eS="vim ~/.config/starship.toml"
 alias history="history 0"
 alias etcher="usbimager"
 alias ls='ls --color=auto'
+alias k='kubectl'
 
 export EDITOR="vim"
 
