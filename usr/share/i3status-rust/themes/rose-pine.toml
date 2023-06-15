@@ -1,0 +1,14 @@
+idle_bg = "#191724" # Rose Pine Background
+idle_fg = "#ebdcdc" # Rose Pine Foreground
+info_bg = "#2a2326" # Rose Pine Bright Background
+info_fg = "#ebdcdc" # Rose Pine Bright Foreground
+good_bg = "#7f5e67" # Rose Pine Calm Background
+good_fg = "#ebdcdc" # Rose Pine Calm Foreground
+warning_bg = "#d8a657" # Rose Pine Sun Background
+warning_fg = "#ebdcdc" # Rose Pine Sun Foreground
+critical_bg = "#e68183" # Rose Pine Depth Background
+critical_fg = "#ebdcdc" # Rose Pine Depth Foreground
+separator = " "
+separator_bg = "auto"
+separator_fg = "auto"
+

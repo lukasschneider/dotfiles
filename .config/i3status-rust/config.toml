@@ -1,10 +1,10 @@
 icons_format = "{icon}"
 
 [theme]
-theme = "slick"
+theme = "rose-pine"
 
 [icons]
-icons = "awesome6"
+icons = "material-nf"
 [icons.overrides]
 bat = ["|E|", "|_|", "|=|", "|F|"]
 bat_charging = "|^| "
@@ -24,7 +24,7 @@ format = " $icon $used / $available"
 
 [[block]]
 block = "memory"
-format = " $icon $mem_used.eng(w:4,u:B,p:G) / $mem_avail.eng(w:4,u:B,p:G)"
+format = " $icon $mem_used.eng(w:4,u:B,p:M) / $mem_avail.eng(w:4,u:B,p:G)"
 format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]

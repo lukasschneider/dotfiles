@@ -35,16 +35,7 @@ return {
   disable_default_key_bindings = true,
   pane_focus_follows_mouse = true,
   mouse_bindings = mb,
---  leader = { key = 'VoidSymbol', timeout_milliseconds = 1000 },
   keys = {
---    {
---      key = 'c',
---      mods = 'CTRL|SHIFT',
---      action = wezterm.action.SpawnCommandInNewTab {
---        args = { 'zsh' },
---        cwd = '~'
---      },
---    },
     {
       key = 'PageUp',
       mods = 'SHIFT',
@@ -83,16 +74,6 @@ return {
       mods = 'CTRL',
       action = wezterm.action.TogglePaneZoomState,
     },
---    {
---      key = 'p',
---      mods = 'LEADER',
---      action = act.ActivateTabRelative(-1),
---    },
---    {
---      key = 'n',
---      mods = 'LEADER',
---      action = act.ActivateTabRelative(1),
---    },
     {
       key = 'LeftArrow',
       mods = 'CTRL|SHIFT',
@@ -164,37 +145,5 @@ return {
   font =  wezterm.font_with_fallback({"Hack", "Twemoji"}),
   font_size = 12,
   force_reverse_video_cursor = false,
-  colors = {
-    ansi = {
-        '#1d1f21',
-        '#cc6666',
-        '#b5bd68',
-        '#f0c674',
-        '#81a2be',
-        '#b294bb',
-        '#8abeb7',
-        '#c5c8c6'
-    },
-    background = '#1d1f21',
-    brights = {
-        '#969896',
-        '#cc6666',
-        '#b5bd68',
-        '#f0c674',
-        '#81a2be',
-        '#b294bb',
-        '#8abeb7',
-        '#ffffff'
-    },
-    foreground = '#c5c8c6',
-    selection_bg = '#373b41',
-    selection_fg = '#c5c8c6',
-    cursor_bg = '#c5c8c6',
-    cursor_border = '#c5c8c6',
-    cursor_fg = '#1d1f21',
-  },
---  default_cursor_style = 'BlinkingBlock',
---  cursor_blink_rate = 500,
---  animation_fps = 100,
---  front_end = "Software",
+  color_scheme = 'rose-pine'
 }
