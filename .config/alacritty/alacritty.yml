@@ -9,7 +9,7 @@ window:
   dimensions:
     columns: 80
     lines: 24
-  opacity: .97
+  opacity: .93
   padding:
     x: 5
     y: 5
@@ -93,7 +93,7 @@ font:
   bold_italic:
     family: Hack Nerd Font
     style: Bold Italic
-
+  size: 13.0
 # Zusätzliche Einstellungen
 scrolling:
   # Scrollen mit Mausrad aktivieren
