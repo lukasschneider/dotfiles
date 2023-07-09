@@ -1,9 +1,9 @@
 sleep 2 && {
   vmware-user &
   jetbrains-toolbox --minimize &
-  feh --bg-fill ~/Pictures/bg.jpg &
+  feh --bg-fill ~/Pictures/backgrounds/bg.jpg
   picom &
-  nm-applet &     	
+  nm-applet &
 } &
 
 xset r rate 300 40

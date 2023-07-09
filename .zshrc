@@ -6,8 +6,10 @@ source $ZSH/oh-my-zsh.sh
 source <(kubectl completion zsh)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/skim/key-bindings.zsh
+source /usr/share/skim/completion.zsh
 
-autoload -U promptinit; promptinit; 
+autoload -U promptinit; promptinit;
 autoload -U compinit bashcompinit
 compinit
 bashcompinit
@@ -84,6 +86,8 @@ setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 #setopt share_history         # share command history data
+
+# Aliase 
 alias eZ="vim ~/.zshrc"
 alias eI="vim ~/.config/i3/config"
 alias eW="vim ~/.config/wezterm/wezterm.lua"
@@ -94,7 +98,8 @@ alias history="history 0"
 alias etcher="usbimager"
 alias ls='ls --color=auto'
 alias k='kubectl'
+alias vim='nvim'
 
-export EDITOR="vim"
+export EDITOR="nvim"
 
 eval "$(starship init zsh)"
