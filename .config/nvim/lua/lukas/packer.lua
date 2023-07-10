@@ -48,4 +48,20 @@ return require('packer').startup(function(use)
     })
 
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup {
+                icons = false,
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    })
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use("tpope/vim-fugitive")
 end)
