@@ -20,11 +20,11 @@ alert_unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
-format = " $icon $used / $available"
+format = " $icon $used / $total"
 
 [[block]]
 block = "memory"
-format = " $icon $mem_used.eng(w:4,u:B,p:M) / $mem_avail.eng(w:4,u:B,p:G)"
+format = " $icon $mem_used.eng(w:4,u:B,p:M) / $mem_total.eng(w:4,u:B,p:G)"
 format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
