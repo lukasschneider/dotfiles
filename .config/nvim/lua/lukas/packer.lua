@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
             {'neovim/nvim-lspconfig'},
             {'williamboman/mason.nvim'},
             {'williamboman/mason-lspconfig.nvim'},
+            {'nvimdev/guard.nvim'},
 
             -- Autocompletion
             {'hrsh7th/nvim-cmp'},
@@ -35,10 +36,12 @@ return require('packer').startup(function(use)
             {'saadparwaiz1/cmp_luasnip'},
             {'hrsh7th/cmp-nvim-lsp'},
             {'hrsh7th/cmp-nvim-lua'},
+            {'simrat39/rust-tools.nvim'},
 
             -- Snippets
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
+            {'hrsh7th/vim-vsnip'},
         }
     }
     -- install without yarn or npm
@@ -47,7 +50,6 @@ return require('packer').startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
     use({
         "folke/trouble.nvim",
         config = function()
@@ -63,5 +65,4 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use("tpope/vim-fugitive")
 end)

@@ -1,18 +1,14 @@
-export ZSH="/usr/share/oh-my-zsh/"
-
-plugins=(git docker kubectl)
-
-source $ZSH/oh-my-zsh.sh
-source <(kubectl completion zsh)
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/skim/key-bindings.zsh
-source /usr/share/skim/completion.zsh
-
 autoload -U promptinit; promptinit;
 autoload -U compinit bashcompinit
 compinit
 bashcompinit
+
+source <(kubectl completion zsh)
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 zstyle ':completion:*' menu yes select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' rehash true
@@ -30,35 +26,6 @@ bindkey '^[[6~' end-of-buffer-or-history          # page down
 bindkey '^[[H' beginning-of-line                  # home
 bindkey '^[[F' end-of-line                        # end
 bindkey '^[[Z' undo                               # shift + tab undo last action
-
-
-# Display Images in Terminal
-function imgcat()
-{
-  local CNT=0
-  local IFS=$'\n'
-  local posY=$(($(echo -e "cols" | tput -S) / 2))
-  local posX=$(($(echo -e "lines" | tput -S) / 4))
-
-  for i in $(find $1 -type f -exec file --mime-type {} \+ | awk -F: '{if ($2 ~/image\//) print $1}'); do
-    CNT=$((CNT+1))
-    if test $(($CNT % 2)) -eq 0 && test "$2" != "-1"; then
-      printf "\033[${posX}A"
-      printf "\033[${posY}C"
-      echo -e "==== $(basename $i) ===="
-      printf "\033[${posY}C"
-    else
-      echo -e "==== $(basename $i) ===="
-    fi
-
-    if echo "$i" | grep -e ".svg$" &> /dev/null; then
-      ffmpeg -i "$i" -vf scale=640:-1 -f image2pipe -vcodec png - 2> /dev/null | wezterm imgcat --height 20%
-    else
-      wezterm imgcat --height 20% "$i";
-    fi
-  done
-}
-
 
 # enable completion features
 autoload -Uz compinit
@@ -79,8 +46,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # History configurations
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=2000
+HISTSIZE=10000
+SAVEHIST=20000
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
@@ -99,6 +66,7 @@ alias etcher="usbimager"
 alias ls='ls --color=auto'
 alias k='kubectl'
 alias vim='nvim'
+alias ssh='TERM=xterm-256color ssh'
 
 export EDITOR="nvim"
 
