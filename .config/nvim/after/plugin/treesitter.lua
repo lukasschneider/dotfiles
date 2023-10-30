@@ -1,24 +1,57 @@
 require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "c_sharp", "cpp", "javascript", "json" },
+	-- A list of parser names, or "all" (the five listed parsers should always be installed)
+	ensure_installed = { "javascript", 
+	"typescript", 
+	"python", 
+	"rust", 
+	"go", 
+	"c", 
+	"lua", 
+	"vim", 
+	"vimdoc", 
+	"gosum",
+	"gowork",
+	"graphql",
+	"html",
+	"http",
+	"json",
+	"make",
+	"passwd",
+	"prql",
+	"r",
+	"regex",
+	"sql",
+	"ssh_config",
+	"toml",
+	"tsx",
+	"twig",
+	"tsv",
+	"yaml",
+	"xml",
+	"svelte",
+	"terraform",
+	"markdown",
+	"latex",
+	"kotlin",
+	"java",
+	"cpp",
+	"css",
+	"comment",
+	"c_sharp",
+	"bibtex",
+	"bash",
+	"query" },
 
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+	-- Install parsers synchronously (only applied to `ensure_installed`)
+	sync_install = false,
 
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
+	-- Automatically install missing parsers when entering buffer
+	-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+	auto_install = true,
 
-  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+	highlight = {
+		enable = true,
 
-  highlight = {
-    enable = true,
-
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
+		additional_vim_regex_highlighting = false,
+	},
 }

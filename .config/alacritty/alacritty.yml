@@ -93,7 +93,7 @@ font:
   bold_italic:
     family: Hack Nerd Font
     style: Bold Italic
-  size: 12.0
+  size: 14.0
 # Zusätzliche Einstellungen
 scrolling:
   # Scrollen mit Mausrad aktivieren

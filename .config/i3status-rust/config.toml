@@ -5,6 +5,7 @@ theme = "rose-pine"
 
 [icons]
 icons = "material-nf"
+
 [icons.overrides]
 bat = ["|E|", "|_|", "|=|", "|F|"]
 bat_charging = "|^| "
@@ -13,6 +14,10 @@ bat_charging = "|^| "
 block = "cpu"
 format = "$icon $utilization"
 interval = 1
+
+[[block]]
+block = "battery"
+format = " $percentage"
 
 [[block]]
 block = "disk_space"

@@ -67,6 +67,9 @@ alias ls='ls --color=auto'
 alias k='kubectl'
 alias vim='nvim'
 alias ssh='TERM=xterm-256color ssh'
+alias ll='ls -larth'
+alias ..='cd ../'
+alias ...='cd ../../'
 
 export EDITOR="nvim"
 

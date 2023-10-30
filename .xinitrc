@@ -1,9 +1,8 @@
 sleep 2 && {
-  vmware-user &
   jetbrains-toolbox --minimize &
-  feh --bg-fill ~/Pictures/backgrounds/bg.jpg
   picom &
   nm-applet &
+  betterlockscreen ~/Pictures/backgrounds/bg.png &
 } &
 
 xset r rate 300 40
@@ -11,5 +10,6 @@ xset r rate 300 40
 setxkbmap -option caps:none
 
 xrdb <(echo "Xcursor.size: 24")
+xrdb ~/.Xresources
 
 exec i3

@@ -18,6 +18,9 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # start joplin (note taking app)
 bindsym $mod+j exec --no-startup-id "MESA_GL_VERSION_OVERRIDE=3.1COMPAT jetbrains-toolbox"
 
+# lock screen to mod + l (like windows)
+bindsym $mod+l exec --no-startup-id betterlockscreen --lock --off 5 dim 0.5
+
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
