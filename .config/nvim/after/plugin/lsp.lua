@@ -4,27 +4,6 @@ lsp.preset("recommended")
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {
-        'tsserver',
-        'eslint',
-        'rust_analyzer',
-        'cmake',
-        'cssls',
-        'dockerls',
-        'docker_compose_language_service',
-        'gopls',
-        'html',
-        'jsonls',
-        'jdtls',
-        'helm_ls',
-        'texlab',
-        'marksman',
-        'sqlls',
-        'svelte',
-        'taplo',
-        'tailwindcss',
-        'yamlls',
-    },
     handlers = {
         lsp.default_setup,
         lua_ls = function()
