@@ -21,13 +21,14 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use('github/copilot.vim')
+    use('tpope/vim-commentary')
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         requires = {
             -- LSP Support
             {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'}, 
+            {'williamboman/mason.nvim'},
             {'williamboman/mason-lspconfig.nvim'},
 
             -- Autocompletion
