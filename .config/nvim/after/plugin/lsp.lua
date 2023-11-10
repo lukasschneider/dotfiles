@@ -4,27 +4,6 @@ lsp.preset("recommended")
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {
-        'tsserver',
-        'eslint',
-        'rust_analyzer',
-        'cmake',
-        'cssls',
-        'dockerls',
-        'docker_compose_language_service',
-        'gopls',
-        'html',
-        'jsonls',
-        'jdtls',
-        'helm_ls',
-        'texlab',
-        'marksman',
-        'sqlls',
-        'svelte',
-        'taplo',
-        'tailwindcss',
-        'yamlls',
-    },
     handlers = {
         lsp.default_setup,
         lua_ls = function()
@@ -62,8 +41,7 @@ cmp.setup({
     formatting = lsp.cmp_format(),
     mapping = cmp.mapping.preset.insert({
         ['<CR>'] = cmp.mapping.confirm({select = false}),
-        ['<Tab>'] = lsp.cmp_action().tab_complete(),
-        ['<S-Tab>'] = lsp.cmp_action().select_prev_or_fallback(),
+        ['<C-Space>'] = cmp.mapping.complete(),
     })
 })
 
