@@ -1,0 +1,38 @@
+general {
+    separator = ""
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "disk /"
+order += "battery 0"
+order += "tztime berlin"
+
+
+cpu_usage {
+	format = "  %usage"
+}
+
+disk "/" {
+    	format = " %used / %avail"
+}
+
+memory {
+	format = "󰍛 %used / %total"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+        format_down = "󱉝"
+        status_chr = "󰂄"
+        status_bat = "󰂁"
+        status_unk = "?"
+        status_full = "󰁹"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+tztime berlin {
+        format = "%d.%m.%Y %H:%M:%S %Z"
+        timezone = "Europe/Berlin"
+}
