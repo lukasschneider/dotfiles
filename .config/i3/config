@@ -1,4 +1,4 @@
-font pango:monospaced 9 
+font pango:monospaced 9
 set $mod Mod4
 floating_modifier $mod
 
@@ -82,13 +82,24 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # reload the configuration file
 bindsym $mod+Shift+r restart
 
 bar {
-      font pango:MesloLGM Nerd Font Bold 12
+      font pango:MesloLGM Nerd Font Bold 14
       position top
-      status_command i3status-rs ~/.config/i3status-rust/config.toml
+      status_command i3status
       i3bar_command  i3bar
       tray_output primary
       colors {
