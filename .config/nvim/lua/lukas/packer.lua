@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    use('fatih/vim-go')
     use('github/copilot.vim')
     use('tpope/vim-commentary')
     use {
