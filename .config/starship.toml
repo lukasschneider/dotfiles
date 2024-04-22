@@ -1,152 +1,216 @@
-format = """
-[](#31748f)\
-$os\
-$username\
-[](bg:#9ccfd8 fg:#31748f)\
-$directory\
-[](fg:#9ccfd8 bg:#f6c177)\
-$git_branch\
-$git_status\
-$git_state\
-[](fg:#f6c177 bg:#808caa)\
-$c\
-$elixir\
-$elm\
-$golang\
-$haskell\
-$java\
-$julia\
-$lua\
-$nodejs\
-$nim\
-$rust\
-$scala\
-$python\
-$dotnet\
-[](fg:#808caa)\
-$docker_context\
-$fill\
-$time\
-$line_break\
-$character
-"""
-
-[fill]
-symbol = ' '
-style = 'blue'
-
-[character]
-success_symbol = '[❯](bold fg:#86BBD8)'
-error_symbol = '[❯](bold fg:#DA627D)'
-
-# Disable the blank line at the start of the prompt
-# add_newline = false
-
-# You can also replace your username with a neat symbol like   or disable this
-# and use the os module below
-[username]
-show_always = true
-style_user = "bg:#31748f fg:#1d1f21"
-style_root = "bg:#eb6f92"
-format = '[$user ]($style)'
-disabled = false
-
 [directory]
-style = "bg:#9ccfd8 fg:#1d1f21"
-format = "[ $path ]($style)"
+read_only = " 󰌾"
 truncation_length = 3
 truncation_symbol = "…/"
 
+[aws]
+symbol = " "
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+
 [c]
 symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+format = '\[[$symbol($version(-$name))]($style)\]'
+
+[cmake]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[cmd_duration]
+format = '\[[ $duration]($style)\]'
+
+[cobol]
+symbol = "⚙️ "
+format = '\[[$symbol($version)]($style)\]'
+
+[conda]
+symbol = " "
+format = '\[[$symbol$environment]($style)\]'
+
+[crystal]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[dart]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
 
 [docker_context]
 symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol $context ]($style) $path'
+format = '\[[$symbol$context]($style)\]'
+
+[dotnet]
+symbol= " "
+format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
 
 [elixir]
-symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
 
 [elm]
 symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+format = '\[[$symbol($version)]($style)\]'
 
-[python]
-symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+[erlang]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[fennel]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[fossil_branch]
+format = '\[[$symbol$branch]($style)\]'
+
+[gcloud]
+format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
+
+[git_branch]
+symbol = " "
+format = '\[[$symbol$branch]($style)\]'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
 
 [golang]
 symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+format = '\[[$symbol($version)]($style)\]'
+
+[gradle]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[guix_shell]
+symbol = " "
+format = '\[[$symbol]($style)\]'
 
 [haskell]
 symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+format = '\[[$symbol($version)]($style)\]'
+
+[haxe]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[helm]
+symbol = "⎈ "
+format = '\[[$symbol($version)]($style)\]'
+
+[hg_branch]
+symbol = " "
+format = '\[[$symbol$branch]($style)\]'
 
 [java]
-symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
 
 [julia]
-symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+symbol = "ஃ "
+format = '\[[$symbol($version)]($style)\]'
 
-[nodejs]
-symbol = ""
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+[kotlin]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
 
-[nim]
-symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
-
-[rust]
-symbol = ""
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+[kubernetes]
+symbol = "󱃾 "
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
 
 [lua]
 symbol = " "
-style = "bg:#808caa fg:#1d1f21"
-format = '[ $symbol ($version) ]($style)'
+format = '\[[$symbol($version)]($style)\]'
+
+[memory_usage]
+symbol = " "
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+[nim]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[nix_shell]
+symbol = "❄️  "
+format = '\[[$symbol$state( \($name\))]($style)\]'
+
+[nodejs]
+symbol = "󰎙 "
+format = '\[[$symbol($version)]($style)\]'
+
+[ocaml]
+symbol = " "
+format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
+
+[openstack]
+symbol = "  "
+format = '\[[$symbol$cloud(\($project\))]($style)\]'
+
+[os]
+format = '\[[$symbol]($style)\]'
+
+[package]
+symbol = " "
+format = '\[[$symbol$version]($style)\]'
+
+[perl]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[php]
+symbol = "󰌟 "
+format = '\[[$symbol($version)]($style)\]'
+
+[pijul_channel]
+symbol = " "
+format = '\[[$symbol$channel]($style)\]'
+
+[pulumi]
+symbol = " "
+format = '\[[$symbol$stack]($style)\]'
+
+[purescript]
+symbol = "<=> "
+format = '\[[$symbol($version)]($style)\]'
+
+[python]
+symbol = " "
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+
+[red]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[ruby]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[rust]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
 
 [scala]
 symbol = " "
-format = '[ $symbol ($version) ]($style)'
+format = '\[[$symbol($version)]($style)\]'
 
-[dotnet]
-style = "bg:#808caa fg:#1d1f21"
-symbol= " "
-format = '[$symbol ($version) 󰓾 ($tfm)]($style)'
-heuristic = true
+[sudo]
+format = '\[[as $symbol]($style)\]'
 
-[git_state]
-style = "bg:#f6c177 fg:#3abf30"
-format = '[\($state( $progress_current of $progress_total)\)]($style)'
+[swift]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
 
-[git_branch]
-symbol = ""
-style = "bg:#f6c177 fg:#1d1f21"
-format = '[ $symbol $branch ]($style)'
-
-[git_status]
-style = "bg:#f6c177 fg:#1d1f21"
-format = '[$all_status$ahead_behind ]($style)'
+[terraform]
+symbol = "󱁢 "
+format = '\[[$symbol$workspace]($style)\]'
 
 [time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "fg:#c5c8c6"
-format = '[ $time ]($style)'
+format = '\[[$time]($style)\]'
+
+[username]
+format = '\[[$user]($style)\]'
+
+[zig]
+symbol = " "
+format = '\[[$symbol($version)]($style)\]'
+
+[solidity]
+symbol = "S "
+format = '\[[$symbol($version)]($style)\]'
