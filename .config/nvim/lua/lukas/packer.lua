@@ -7,8 +7,8 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        -- or                            , tag = '0.1.6',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use({ 'rose-pine/neovim', as = 'rose-pine' })
@@ -20,8 +20,7 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
-    use('fatih/vim-go')
-    use('github/copilot.vim')
+    -- use('github/copilot.vim')
     use('tpope/vim-commentary')
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -39,6 +38,7 @@ return require('packer').startup(function(use)
             {'saadparwaiz1/cmp_luasnip'},
             {'hrsh7th/cmp-nvim-lsp'},
             {'hrsh7th/cmp-nvim-lua'},
+            {'fatih/vim-go'},
             {'simrat39/rust-tools.nvim'},
 
             -- Snippets
