@@ -57,12 +57,9 @@ setopt hist_verify            # show command with history expansion to user befo
 # Aliase 
 alias eZ="vim ~/.zshrc"
 alias eI="vim ~/.config/i3/config"
-alias eW="vim ~/.config/wezterm/wezterm.lua"
-alias eI="vim ~/.config/i3/config"
 alias eV="vim ~/.vimrc"
 alias eS="vim ~/.config/starship.toml"
 alias history="history 0"
-alias etcher="usbimager"
 alias ls='ls --color=auto'
 alias k='kubectl'
 alias vim='nvim'
@@ -71,6 +68,7 @@ alias ll='ls -larth'
 alias ..='cd ../'
 alias ...='cd ../../'
 
+# Exports
 export EDITOR="nvim"
 
 eval "$(starship init zsh)"
