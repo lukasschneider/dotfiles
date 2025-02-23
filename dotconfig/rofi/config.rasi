@@ -4,9 +4,8 @@ configuration{
     kb-mode-next: "Right,Super_L+Right";
     kb-mode-previous: "Left,Super_L+Left";
     icon-theme: "Papirus-Dark";
-    font: "Inter Medium 16";
+    font: "Hack Nerd Font 14";
     show-icons: true;
-    terminal: "wezterm start";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
