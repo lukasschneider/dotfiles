@@ -27,8 +27,7 @@ return {
                 "gopls",
                 "tsgo",
                 "terraformls",
-                "tflint",
-                "prettierd",
+                "tflint"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
