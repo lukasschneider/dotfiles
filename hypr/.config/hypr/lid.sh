@@ -10,7 +10,7 @@ if hyprctl monitors | grep -q "$EXTERNAL"; then
         hyprctl keyword monitor "$INTERNAL, disable"
     else
         # Lid offen -> internen Monitor links vom externen platzieren
-        hyprctl keyword monitor "$INTERNAL, preferred, -1920x0, 1"
+        hyprctl keyword monitor "$INTERNAL, preferred, 0x0, 1"
     fi
 else
     # Kein externer Monitor -> interner IMMER aktiv
