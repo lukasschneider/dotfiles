@@ -144,3 +144,6 @@ alias claws='claws --read-only'
 export EDITOR="nvim"
 
 eval "$(starship init zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
